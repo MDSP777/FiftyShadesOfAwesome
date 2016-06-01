@@ -138,22 +138,23 @@
     <div class="header">
         Compose
     </div>
-    <div class="ui form content">
-        <div class="field">
-            <input placeholder="@username" type="text">
-        </div>
-        <div class="field">
-            <input style="font-size: large" placeholder="Title" type="text">
-        </div>
-        <div class="field">
-            <textarea style="font-size: medium" placeholder="Your text here.."></textarea>
-        </div>
-        <button class="ui right floated blue labeled icon button" type="submit">Submit<i class="checkmark icon"></i>
-        </button>
-
-        <br><br>
-    </div>
-
+	    <div class="ui form content">
+			<form action="submit_post" method="post">	
+		        <div class="field">
+		            <input placeholder="@username" name="author" type="text">
+		        </div>
+		        <div class="field">
+		            <input style="font-size: large" placeholder="Title" name="title" type="text">
+		        </div>
+		        <div class="field">
+		            <textarea style="font-size: medium" name="content" placeholder="Your text here.."></textarea>
+		        </div>
+		        <button class="ui right floated blue labeled icon button" type="submit">Submit<i class="checkmark icon"></i>
+		        </button>
+		
+		        <br><br>
+			</form>
+	    </div>
 </div>
 
 </body>

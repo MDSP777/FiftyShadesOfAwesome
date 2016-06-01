@@ -1,6 +1,7 @@
 package web;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Collection;
 
 import javax.servlet.ServletException;
@@ -40,5 +41,19 @@ public class TheController {
 		request.getRequestDispatcher("WEB-INF/view/post.jsp").forward(request, response);
 	}
 	
-	
+	@RequestMapping("/submit_post")
+	public void submitPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		System.out.println(request.getParameter("author"));
+		System.out.println(request.getParameter("title"));
+		System.out.println(request.getParameter("content"));
+		
+		Post p = new Post(request.getParameter("title"),
+							request.getParameter("author"),
+							request.getParameter("content"),
+							Calendar.getInstance().getTime());
+		
+		postService.addPost(p);
+		response.sendRedirect("index.html");
+		
+	}
 }
