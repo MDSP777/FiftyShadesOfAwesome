@@ -1,0 +1,43 @@
+.seemore{
+    font-style: italic;
+    font-size: medium;
+}
+
+#pagination{
+    text-align: center !important;
+    margin: 0 auto !important;
+    align-content: center !important;
+    width: auto !important;
+}
+
+p{
+    font-size: medium;
+}
+
+.hidden, .hiddencomm{
+    display: none;
+}
+
+.postcontent{
+    padding-top: 92px;
+    padding-bottom: 30px;
+}
+
+.postcontent2{
+    padding-top: 85px;
+    padding-bottom: 30px;
+}
+
+.aboutuscontent{
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+.picturepadding {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.show{
+    display: inline-block;
+}
