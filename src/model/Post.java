@@ -1,5 +1,6 @@
 package model;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -9,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -50,10 +50,14 @@ public class Post {
 		return author;
 	}
 	public String getContent() {
-		return content;
+		return content.replaceAll("\n\n", "<br/><br/>").substring(0, 550)+"...";
 	}
-	public Date getDatePosted() {
-		return datePosted;
+	public String getFullContent() {
+		return content.replaceAll("\n\n", "<br/><br/>");
+	}
+	public String getDatePosted() {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		return formatter.format(datePosted);
 	}
 	public Collection<Comment> getCommentsList() {
 		return commentsList;
