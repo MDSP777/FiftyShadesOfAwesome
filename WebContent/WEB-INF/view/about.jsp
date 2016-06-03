@@ -7,9 +7,12 @@
     <meta charset="UTF-8">
     <title>About Us</title>
 
+    <script src="<c:url value="/resources/jquery-1.11.3.min.js" />"></script>
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/Semantic-UI-master/dist/semantic.min.css" />">
     <script src="<c:url value="/resources/Semantic-UI-master/dist/semantic.min.js" />"></script>
-
+	
+	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/prosdev.css" />">
+    
 </head>
 <body>
 <div class="ui large top fixed secondary pointing menu" style="background-color: white">
@@ -32,8 +35,8 @@
         </div>
     </div>
 </div>
-
-<div class="ui container aboutuscontent">
+<div class="ui hidden divider"></div>
+<div class="ui container postcontent2">
     <div class="column">
         <div class="ui vertical segment">
             <h1 class = "ui header blue">What is biting?</h1>
@@ -58,19 +61,19 @@
             <div class="ui five column grid">
                 <div class="row">
                     <div class="column">
-                        <img class="ui small circular image centered" src="avril.jpg">
+                        <img class="ui small circular image centered" src="<c:url value="/resources/avril.jpg"/>">
                     </div>
                     <div class="column">
-                        <img class="ui small circular image centered" src="rissa.jpg">
+                        <img class="ui small circular image centered" src="<c:url value="/resources/rissa.jpg"/>">
                     </div>
                     <div class="column">
-                        <img class="ui small circular image centered" src="marc.jpg">
+                        <img class="ui small circular image centered" src="<c:url value="/resources/marc.jpg"/>">
                     </div>
                     <div class="column">
-                        <img class="ui small circular image centered" src="shayane.jpg">
+                        <img class="ui small circular image centered" src="<c:url value="/resources/shayane.jpg"/>">
                     </div>
                     <div class="column">
-                        <img class="ui small circular image centered" src="stanley.jpg">
+                        <img class="ui small circular image centered" src="<c:url value="/resources/stanley.jpg"/>">
                     </div>
                 </div>
                 <div class="row">

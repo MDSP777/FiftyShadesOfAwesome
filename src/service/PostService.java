@@ -22,7 +22,7 @@ public class PostService extends JpaService {
 	public Collection<Post> findAll(){
 		openTransaction();
 		try {
-			TypedQuery<Post> q = entityManager.createQuery("Select p from Post p", Post.class);
+			TypedQuery<Post> q = entityManager.createQuery("Select p from Post p order by p.datePosted desc", Post.class);
 			return q.getResultList();
 		} finally {
 			closeTransaction();

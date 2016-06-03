@@ -53,7 +53,7 @@ public class Post {
 		return (content.length()<550) ? content : content.replaceAll("\n\n", "<br/><br/>").substring(0, 550)+"...";
 	}
 	public String getFullContent() {
-		return content.replaceAll("\n\n", "<br/><br/>");
+		return content.replaceAll("\n", "<br/>");
 	}
 	public String getDatePosted() {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");

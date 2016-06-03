@@ -28,24 +28,6 @@
     </script>
 </head>
 <body>
-<!--<div class="ui large top attached stackable secondary menu">-->
-
-    <!--<div class="ui container">-->
-        <!--<div class="item">-->
-            <!--<img src="logo.jpeg">-->
-        <!--</div>-->
-        <!--<div class="right menu">-->
-            <!--<a class="active blue item" href="index.html">Home</a>-->
-            <!--<a class="blue item" href="about.html">About Us</a>-->
-            <!--<div class="item">-->
-                <!--<button class="ui blue button" id="compose">-->
-                    <!--<i class="write icon"></i>-->
-                    <!--Compose-->
-                <!--</button>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
 
 <div class="ui large top fixed secondary pointing menu" style="background-color: white">
 
@@ -69,19 +51,6 @@
 </div>
 <div class="ui hidden divider"></div>
 <div class="ui container postcontent2">
-
-    <div style="min-height: 263px;" class="right ui rail">
-        <div  class="ui sticky">
-            <h3 class="ui header">Stuck Content</h3>
-            <p>Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem
-                aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque
-                electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>
-            <p>Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo.
-                Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo
-                vide phaedrum, vim vivendum maiestatis in.</p>
-        </div>
-    </div>
-
     <div class="column">
     	<c:forEach var="post" items="${posts }">
 	        <div class="ui vertical segment">
@@ -97,12 +66,6 @@
 	        </div>
 		</c:forEach>
     </div>
-    <!--<div style="min-height: 263px;" class="right ui rail">-->
-    <!--<div style="width: 272px ! important; height: 263px ! important; left: 1356.5px;" class="ui sticky">-->
-    <!--<h3 class="ui header">Stuck Content</h3>-->
-    <!--<img>-->
-    <!--</div>-->
-    <!--</div>-->
 
 
 </div>

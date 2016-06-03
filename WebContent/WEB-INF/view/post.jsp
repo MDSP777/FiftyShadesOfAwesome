@@ -66,6 +66,7 @@
             <h1 class="ui header">${post.title }
                 <div class="sub header">${post.author }</div>
             </h1>
+            
             ${post.fullContent }
 
         </div>
@@ -91,56 +92,56 @@
 
         </div>
 
-        <div class="ui comments">
-            <div class="comment">
-                <div class="content">
-                    <a class="author">@sharkscion</a>
-                    <div class="metadata">
-                        <span class="date">Today at 5:42PM</span>
-                    </div>
-                    <div class="text">
-                        How artistic!
-                    </div>
-                </div>
-            </div>
-            <div class="comment">
-                <div class="content">
-                    <a class="author">@UyDMN</a>
-                    <div class="metadata">
-                        <span class="date">Yesterday at 12:30AM</span>
-                    </div>
-                    <div class="text">
-                        TROLOLOLOLOL :))
-                    </div>
-                </div>
-            </div>
+<!--         <div class="ui comments"> -->
+<!--             <div class="comment"> -->
+<!--                 <div class="content"> -->
+<!--                     <a class="author">@sharkscion</a> -->
+<!--                     <div class="metadata"> -->
+<!--                         <span class="date">Today at 5:42PM</span> -->
+<!--                     </div> -->
+<!--                     <div class="text"> -->
+<!--                         How artistic! -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--             <div class="comment"> -->
+<!--                 <div class="content"> -->
+<!--                     <a class="author">@UyDMN</a> -->
+<!--                     <div class="metadata"> -->
+<!--                         <span class="date">Yesterday at 12:30AM</span> -->
+<!--                     </div> -->
+<!--                     <div class="text"> -->
+<!--                         TROLOLOLOLOL :)) -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--             </div> -->
 
-            <div class="comment hiddencomm">
-                <div class="content">
-                    <a class="author">@UyDMN</a>
-                    <div class="metadata">
-                        <span class="date">Yesterday at 12:30AM</span>
-                    </div>
-                    <div class="text">
-                        TROLOLOLOLOL :))
-                    </div>
-                </div>
-            </div>
+<!--             <div class="comment hiddencomm"> -->
+<!--                 <div class="content"> -->
+<!--                     <a class="author">@UyDMN</a> -->
+<!--                     <div class="metadata"> -->
+<!--                         <span class="date">Yesterday at 12:30AM</span> -->
+<!--                     </div> -->
+<!--                     <div class="text"> -->
+<!--                         TROLOLOLOLOL :)) -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--             </div> -->
 
-            <div class="comment hiddencomm">
-                <div class="content">
-                    <a class="author">@UyDMN</a>
-                    <div class="metadata">
-                        <span class="date">Yesterday at 12:30AM</span>
-                    </div>
-                    <div class="text">
-                        TROLOLOLOLOL :))
-                    </div>
-                </div>
-            </div>
-            <br>
-            <a class="blue" id="viewcomm" href="#">View more comments..</a>
-        </div>
+<!--             <div class="comment hiddencomm"> -->
+<!--                 <div class="content"> -->
+<!--                     <a class="author">@UyDMN</a> -->
+<!--                     <div class="metadata"> -->
+<!--                         <span class="date">Yesterday at 12:30AM</span> -->
+<!--                     </div> -->
+<!--                     <div class="text"> -->
+<!--                         TROLOLOLOLOL :)) -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--             <br> -->
+<!--             <a class="blue" id="viewcomm" href="#">View more comments..</a> -->
+<!--         </div> -->
 
     </div>
 
