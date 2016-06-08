@@ -35,46 +35,42 @@
 </head>
 <body>
 
-<div class="ui large top fixed secondary pointing menu" style="background-color: white">
+    <div class="ui inverted large top fixed menu">
 
     <div class="ui container">
-        <div class="left menu">
-            <a class="blue item" href="index.html">Home</a>
-            <a class="blue item" href="about.html">About Us</a>
-        </div>
-        <div class="item">
-            <img src="<c:url value="resources/logo.jpeg"/>">
-        </div>
-        <div class="right menu">
-            <div class="item">
-                <button class="ui blue button" id="compose">
-                    <i class="write icon"></i>
-                    Compose
-                </button>
-            </div>
-        </div>
+    <!--<div class="item">-->
+    <a href="index.html"><img id="logo" src="anonytwitter2.png"></a>
+    <!--</div>-->
+    <div class="right menu">
+    <a class="item" href="index.html">Home</a>
+    <a class="item" href="about.html">About Us</a>
     </div>
-</div>
+    </div>
+    </div>
 
 <div class="ui hidden divider"></div>
-<div class="ui container">
+<div class="ui container postcontent">
     <div class="column">
-        <div class="postcontent">
-            <h1 class="ui header">
+    <div class="ui very padded segment">
+        <div>
+    <div class="ui basic clearing segment">
+            <h1 class="ui right floated header">
                 <div class="sub header">${post.datePosted }</div>
             </h1>
-            <h1 class="ui header">${post.title }
+            <h1 class="ui left floated header">${post.title }
                 <div class="sub header">${post.author }</div>
             </h1>
-            
+    </div>
+    <div class="ui basic segment">
             ${post.fullContent }
-
+    </div>
         </div>
 
         <h4 class="ui horizontal divider">
             Comments
         </h4>
 
+    <div class="ui basic  segment">
         <div class="ui form content">
             <div class="field hidden">
                 <input placeholder="@username" type="text">
@@ -142,7 +138,8 @@
 <!--             <br> -->
 <!--             <a class="blue" id="viewcomm" href="#">View more comments..</a> -->
 <!--         </div> -->
-
+</div>
+    </div>
     </div>
 
 
