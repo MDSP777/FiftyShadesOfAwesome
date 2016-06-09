@@ -27,19 +27,15 @@ public class TheController {
 		request.getRequestDispatcher("WEB-INF/view/about.jsp").forward(request, response);
 	}
 	
-//	@RequestMapping("/index.html")
-//	public void goHome(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
-//		Collection<Post> posts = postService.findAll();
-//		request.setAttribute("posts", posts);
-//		request.setAttribute("pageNo", 1);
-//		request.getRequestDispatcher("WEB-INF/view/index.jsp").forward(request, response);
-//	}
-	
 	@RequestMapping("/index.html")
-	public void goHome2(@RequestParam int id, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
-		Collection<Post> posts = postService.findPostsWithOffset((id-1)*5, 5);
+	public void goHome(@RequestParam(required=false, defaultValue="1") int page, 
+			HttpServletRequest request, 
+			HttpServletResponse response) throws ServletException, IOException {	
+		Collection<Post> posts = postService.findPostsWithOffset((page-1)*5, 5);
 		request.setAttribute("posts", posts);
-		request.setAttribute("pageNo", id);
+		request.setAttribute("pageNo", page);
+		request.setAttribute("pageCount", (postService.getPostCount()-1)/5+1);
+		System.out.println(page);
 		request.getRequestDispatcher("WEB-INF/view/index.jsp").forward(request, response);
 	}
 	

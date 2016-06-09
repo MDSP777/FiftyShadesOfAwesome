@@ -29,72 +29,169 @@
 </head>
 <body>
 
-<div class="ui large top fixed secondary pointing menu" style="background-color: white">
+    <button class="ui red circular button" id="compose">
+    <img class="ui image" src="compose2.png">
+    </button>
+    <div class="ui inverted large top fixed menu">
 
     <div class="ui container">
-        <div class="left menu">
-            <a class="active blue item" href="index.html">Home</a>
-            <a class="blue item" href="about.html">About Us</a>
-        </div>
-        <div class="item">
-            <img src="<c:url value="resources/logo.png"/>">
-        </div>
-        <div class="right menu">
-            <div class="item">
-                <button class="ui blue button" id="compose">
-                    <i class="write icon"></i>
-                    Compose
-                </button>
-            </div>
-        </div>
+    <!--<div class="item">-->
+    <a href="index.html"><img id="logo" src="<c:url value="/resources/anonytwitter2.png" />"></a>
+    <!--</div>-->
+    <div class="right menu">
+    <a class="active item" href="index.html">Home</a>
+    <a class="item" href="about.html">About Us</a>
     </div>
-</div>
+    </div>
+    </div>
 <div class="ui hidden divider"></div>
 <div class="ui container postcontent2">
     <div class="column">
-    	<c:forEach var="post" items="${posts }">
-	        <div class="ui vertical segment">
-	            <h1 class="ui header">
-	                <div class="sub header">${post.datePosted }</div>
-	            </h1>
-	            <h1 class="ui header">${post.title }
-	                <div class="sub header">${post.author }</div>
-	            </h1>
-	            ${post.content }
-				<br/><br/>
-	            <a class="blue seemore" href="post.html?id=${post.id }">See more...</a>
-	        </div>
-		</c:forEach>
+	    <div class="ui very padded segment">
+	    	<c:forEach var="post" items="${posts }">
+	            <div class="ui basic clearing segment">
+		            <h1 class="ui right floated header">
+		                <div class="sub header">${post.datePosted }</div>
+		            </h1>
+		            <h1 class="ui left floated  header">${post.title }
+		                <div class="sub header">${post.author }</div>
+		            </h1>
+	            </div>
+	            <div class="ui basic segment">
+		            ${post.content }
+					<br/><br/>
+		            <a class="blue seemore" href="post.html?id=${post.id }">See more...</a>
+		        </div>
+	
+	            <div class="ui divider"></div>
+			</c:forEach>
+		    <div class="ui bottom secondary menu">
+			    <div class="ui container" id="pagination">
+			    <c:choose>
+			    	<c:when test="${pageNo==1 }">    		
+					    <i class=" disabled material-icons">chevron_left</i>
+			    	</c:when>
+			    	<c:otherwise>    		
+					    <a href="index.html?page=${pageNo-1 }"><i class="material-icons">chevron_left</i></a>
+			    	</c:otherwise>
+			    </c:choose>
+			    <c:choose>
+					<c:when test="${pageCount<=7 }">
+						<c:forEach begin="1" end="${pageCount }" varStatus="loop" var="val">
+							<c:choose>
+								<c:when test="${pageNo==val }"> 
+									<a class="active item"  href="index.html?page=${val }">
+								    	${val }
+								    </a>
+								</c:when>
+								<c:otherwise>
+									<a class="item"  href="index.html?page=${val }">
+								    	${val }
+								    </a>
+							    </c:otherwise>
+						    </c:choose>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<!-- more than seven pages -->
+						<c:choose>
+							<c:when test="${pageNo<=3 }">
+								<c:forEach begin="1" end="3" varStatus="loop" var="val">
+									<c:choose>
+										<c:when test="${pageNo==val }"> 
+											<a class="active item"  href="index.html?page=${val }">
+										    	${val }
+										    </a>
+										</c:when>
+										<c:otherwise>
+											<a class="item"  href="index.html?page=${val }">
+										    	${val }
+										    </a>
+									    </c:otherwise>
+								    </c:choose>
+								</c:forEach>
+								<div class="disabled item">
+								    	...
+							    </div>
+							    <a class="item"  href="index.html?page=${pageCount }">
+							    	${pageCount }
+							    </a>
+							</c:when>
+							<c:when test="${pageNo>3 && pageNo<=pageCount-3 }">
+								<a class="item"  href="index.html?page=1">
+							    	1
+							    </a>
+								<div class="disabled item">
+								    	...
+							    </div>
+								<a class="active item"  href="index.html?page=${pageNo }">
+							    	${pageNo }
+							    </a>
+								<div class="disabled item">
+								    	...
+							    </div>
+							    <a class="item"  href="index.html?page=${pageCount }">
+							    	${pageCount }
+							    </a>
+							</c:when>
+							<c:otherwise>
+								<a class="item"  href="index.html?page=1">
+							    	1
+							    </a>
+								<div class="disabled item">
+								    	...
+							    </div>
+							    <c:forEach begin="${pageCount-2 }" end="${pageCount }" varStatus="loop" var="val">
+									<c:choose>
+										<c:when test="${pageNo==val }"> 
+											<a class="active item"  href="index.html?page=${val }">
+										    	${val }
+										    </a>
+										</c:when>
+										<c:otherwise>
+											<a class="item"  href="index.html?page=${val }">
+										    	${val }
+										    </a>
+									    </c:otherwise>
+								    </c:choose>
+								</c:forEach>
+							</c:otherwise>
+						</c:choose>
+					</c:otherwise>
+				</c:choose>
+				<c:choose>
+			    	<c:when test="${pageNo==pageCount }">    		
+					    <i class=" disabled material-icons">chevron_right</i>
+			    	</c:when>
+			    	<c:otherwise>    		
+					    <a href="index.html?page=${pageNo+1 }"><i class="material-icons">chevron_right</i></a>
+			    	</c:otherwise>
+			    </c:choose>
+<!-- 			    <a class="active item"> -->
+<!-- 			    1 -->
+<!-- 			    </a> -->
+<!-- 			    <div class="disabled item"> -->
+<!-- 			    ... -->
+<!-- 			    </div> -->
+<!-- 			    <a class="item"> -->
+<!-- 			    10 -->
+<!-- 			    </a> -->
+<!-- 			    <a class="item"> -->
+<!-- 			    11 -->
+<!-- 			    </a> -->
+<!-- 			    <a class="item"> -->
+<!-- 			    12 -->
+<!-- 			    </a> -->
+			    <!--</div>-->
+			    </div>
+		    </div>
+	
+	    </div>
     </div>
-
 
 </div>
 
 <div class="ui hidden divider"></div>
-
-<div class="ui bottom attached pagination stackable secondary menu">
-
-<!--     <div class="ui container" id="pagination"> -->
-
-<!--         <div class="ui menu"> -->
-<!--             <a class="active item"> -->
-<!--                 1 -->
-<!--             </a> -->
-<!--             <div class="disabled item"> -->
-<!--                 ... -->
-<!--             </div> -->
-<!--             <a class="item"> -->
-<!--                 10 -->
-<!--             </a> -->
-<!--             <a class="item"> -->
-<!--                 11 -->
-<!--             </a> -->
-<!--             <a class="item"> -->
-<!--                 12 -->
-<!--             </a> -->
-<!--         </div> -->
-<!--     </div> -->
-</div>
 
 <div class="ui modal" id="mod">
     <i class="close icon"></i>
@@ -102,7 +199,7 @@
         Compose
     </div>
 	    <div class="ui form content">
-			<form action="submit_post" method="post">	
+			<form action="submit_post" method="post">
 		        <div class="field">
 		            <input placeholder="@username" name="author" type="text">
 		        </div>
@@ -114,7 +211,7 @@
 		        </div>
 		        <button class="ui right floated blue labeled icon button" type="submit">Submit<i class="checkmark icon"></i>
 		        </button>
-		
+
 		        <br><br>
 			</form>
 	    </div>

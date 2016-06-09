@@ -2,6 +2,7 @@ package service;
 
 import java.util.Collection;
 
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import model.Post;
@@ -53,4 +54,14 @@ public class PostService extends JpaService {
 			closeTransaction();
 		}
 	}
+	
+	public int getPostCount(){
+		openTransaction();
+		try{
+			Query q = entityManager.createQuery("SELECT count(p) FROM Post p");
+			return Integer.parseInt(q.getSingleResult()+"");
+		} finally {
+			closeTransaction();
+		}
+	} 
 }
