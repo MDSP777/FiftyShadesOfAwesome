@@ -29,9 +29,11 @@
 </head>
 <body>
 
-    <button class="ui red circular button" id="compose">
-    <img class="ui image" src="<c:url value="/resources/compose2.png" />">
-    </button>
+    <button>
+	    <img class="ui tiny circular image" src="<c:url value="/resources/compose.png" />"" id="compose">
+	    <!--</img>-->
+	</button>
+
     <div class="ui inverted large top fixed menu">
 
     <div class="ui container">
@@ -167,22 +169,6 @@
 					    <a href="index.html?page=${pageNo+1 }"><i class="material-icons">chevron_right</i></a>
 			    	</c:otherwise>
 			    </c:choose>
-<!-- 			    <a class="active item"> -->
-<!-- 			    1 -->
-<!-- 			    </a> -->
-<!-- 			    <div class="disabled item"> -->
-<!-- 			    ... -->
-<!-- 			    </div> -->
-<!-- 			    <a class="item"> -->
-<!-- 			    10 -->
-<!-- 			    </a> -->
-<!-- 			    <a class="item"> -->
-<!-- 			    11 -->
-<!-- 			    </a> -->
-<!-- 			    <a class="item"> -->
-<!-- 			    12 -->
-<!-- 			    </a> -->
-			    <!--</div>-->
 			    </div>
 		    </div>
 	

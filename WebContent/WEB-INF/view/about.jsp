@@ -15,41 +15,30 @@
     
 </head>
 <body>
-    <div class="ui inverted large top fixed menu">
+ <div class="ui inverted large top fixed menu">
 
     <div class="ui container">
-    <!--<div class="item">-->
-    <a href="index.html"><img id="logo" src="<c:url value="/resources/anonytwitter2.png" />"></a>
-    <!--</div>-->
-    <div class="right menu">
-    <a class="item" href="index.html">Home</a>
-    <a class="active item" href="about.html">About Us</a>
-    </div>
+        
+    	<a href="index.html"><img id="logo" src="<c:url value="/resources/anonytwitter2.png" />"></a>
+    
+    	<div class="right menu">
+    		<a class="item" href="index.html">Home</a>
+    		<a class="active item" href="about.html">About Us</a>
+    	</div>
     </div>
 </div>
 <div class="ui hidden divider"></div>
 <div class="ui container postcontent2">
     <div class="column">
-        <div class="ui vertical segment">
-            <h1 class = "ui header blue">What is anonytwitter?</h1>
+        <div class="ui very padded segment">
+            <h1 class = "ui header black">What is anonytwitter?</h1>
             <p>Anonytwitter is anonymous tweeting!</p>
             <p>Anonytwitter hopes to be a haven for society's outcasts.
             Users can freely share their ideas and experiences anonymously. </p>
-        </div>
-
-        <!-- <div class="ui vertical segment">
-            <p>Vertical Segment 2</p>
-        </div>
-
-        <div class="ui vertical segment">
-            <p>Vertical Segment 3</p>
-        </div> -->
-    </div>
-</div>
-<div class = "ui container">
-    <div class = "column">
-        <div class = "ui vertical segment">
-            <h1 class = "ui header blue">Who Are We?</h1>
+        
+        <br/>
+    
+            <h1 class = "ui header black">Who Are We?</h1>
             <br/>
             <div class="ui five column grid">
                 <div class="row">
@@ -89,6 +78,24 @@
                     <div class = "column">
                         <h3 class="ui center aligned icon header">Stanley Yu Galan
                         <div class="sub header">Designer</div></h3>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class = "column">
+                        <h3 class="ui center aligned header"><div class = "sub header">A developer who has a love-hate relationship with UI development. And an exclusively love relationship with cats.</div></h3>
+                    </div>
+                    <div class = "column">
+                        <h3 class="ui center aligned header"><div class = "sub header">A developer who can shell out hundreds of lines of codes in one sitting. Also has a facination with Loki.</div></h3>
+                    </div>
+                    <div class = "column">
+                        <h3 class="ui center aligned header"><div class = "sub header">A developer who can take a quick glace at buggy code and immediately know what's wrong. When you take a glance at him you can also see him playing Dark Souls on his laptop.</div></h3>
+                    </div>
+                    <div class = "column">
+                        <h3 class="ui center aligned header"><div class = "sub header">A designer who can design and code beautiful user interfaces. Her design skills also extend to her drawings and sketches.</div></h3>
+                    </div>
+                    <div class = "column">
+                        <h3 class="ui center aligned header"><div class = "sub header">A designer who knows how to design eye-catching layouts for user interfaces. His photography and video making skills are also nothing to scoff about.</div></h3>
                     </div>
                 </div>
                 
