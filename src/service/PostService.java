@@ -20,6 +20,15 @@ public class PostService extends JpaService {
 		}
 	}
 	
+	public void updatePost(Post p){
+		openTransaction();
+		try {
+			entityManager.merge(p);
+		} finally {
+			closeTransaction();
+		}
+	}
+	
 	public Collection<Post> findAll(){
 		openTransaction();
 		try {
@@ -64,4 +73,5 @@ public class PostService extends JpaService {
 			closeTransaction();
 		}
 	} 
+	
 }

@@ -30,7 +30,7 @@
 <body>
 
     <button class="ui red circular button" id="compose">
-    <img class="ui image" src="compose2.png">
+    <img class="ui image" src="<c:url value="/resources/compose2.png" />">
     </button>
     <div class="ui inverted large top fixed menu">
 

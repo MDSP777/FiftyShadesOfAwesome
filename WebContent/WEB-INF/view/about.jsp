@@ -15,24 +15,16 @@
     
 </head>
 <body>
-<div class="ui large top fixed secondary pointing menu" style="background-color: white">
+    <div class="ui inverted large top fixed menu">
 
     <div class="ui container">
-        <div class="left menu">
-            <a class=" blue item" href="index.html">Home</a>
-            <a class="active blue item" href="about.html">About Us</a>
-        </div>
-        <div class="item">
-            <img src="<c:url value="/resources/logo.png" />">
-        </div>
-        <div class="right menu">
-            <div class="item">
-                <button class="ui blue button" id="compose">
-                    <i class="write icon"></i>
-                    Compose
-                </button>
-            </div>
-        </div>
+    <!--<div class="item">-->
+    <a href="index.html"><img id="logo" src="<c:url value="/resources/anonytwitter2.png" />"></a>
+    <!--</div>-->
+    <div class="right menu">
+    <a class="item" href="index.html">Home</a>
+    <a class="active item" href="about.html">About Us</a>
+    </div>
     </div>
 </div>
 <div class="ui hidden divider"></div>

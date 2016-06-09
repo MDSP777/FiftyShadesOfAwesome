@@ -13,7 +13,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Comment {
+public class Comment implements Comparable<Comment>  {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
@@ -57,5 +57,12 @@ public class Comment {
 
 	public void setPost(Post post) {
 		this.post = post;
+	}
+
+	@Override
+	public int compareTo(Comment o) {
+		if(datePosted.before(o.datePosted)) return 1;
+		else if (datePosted.after(o.datePosted)) return -1;
+		else return 0;
 	}	
 }

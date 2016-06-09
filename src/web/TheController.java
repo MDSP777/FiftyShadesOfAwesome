@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Comment;
 import model.Post;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,17 +49,23 @@ public class TheController {
 	
 	@RequestMapping("/submit_post")
 	public void submitPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
-		System.out.println(request.getParameter("author"));
-		System.out.println(request.getParameter("title"));
-		System.out.println(request.getParameter("content"));
-		
 		Post p = new Post(request.getParameter("title"),
 							request.getParameter("author"),
 							request.getParameter("content"),
 							Calendar.getInstance().getTime());
 		
 		postService.addPost(p);
-		response.sendRedirect("index.html");
-		
+		response.sendRedirect("index.html");	
+	}
+	
+	@RequestMapping("/submit_comment")
+	public void submitComment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		Post p = postService.findById(Integer.parseInt(request.getParameter("postId")));
+		Comment c = new Comment(request.getParameter("author"),
+								request.getParameter("content"),
+								Calendar.getInstance().getTime());
+		p.addComment(c);
+		postService.updatePost(p);
+		response.sendRedirect("post.html?id="+p.getId());	
 	}
 }

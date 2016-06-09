@@ -34,7 +34,6 @@
     </script>
 </head>
 <body>
-
     <div class="ui inverted large top fixed menu">
 
     <div class="ui container">
@@ -69,48 +68,40 @@
         <h4 class="ui horizontal divider">
             Comments
         </h4>
-
     <div class="ui basic  segment">
-        <div class="ui form content">
-            <div class="field hidden">
-                <input placeholder="@username" type="text">
-            </div>
-            <div class="field">
-                <textarea id="comment" rows="1" style="font-size: medium" placeholder="Comment.."></textarea>
-            </div>
+		<form method="post" action="submit_comment">
+			<input type="hidden" value="${post.id }" name="postId"/>
+	        <div class="ui form content">
+	            <div class="field hidden">
+	                <input placeholder="@username" type="text" name="author">
+	            </div>
+	            <div class="field">
+	                <textarea name="content" id="comment" rows="1" style="font-size: medium" placeholder="Comment.."></textarea>
+	            </div>
+	
+	            <div class="hidden">
+	                <button class="ui right floated  blue labeled icon button " type="submit">Submit<i class="checkmark icon"></i>
+	                </button>
+	                <br>
+	                <br>
+	            </div>
+	        </div>
+        </form>
 
-            <div class="hidden">
-                <button class="ui right floated  blue labeled icon button " type="submit">Submit<i class="checkmark icon"></i>
-                </button>
-                <br>
-                <br>
+        <div class="ui comments">
+            <div class="comment">
+            	<c:forEach var="comment" items="${post.commentsList }">
+                <div class="content">
+                    <a class="author">${comment.author }</a>
+                    <div class="metadata">
+                        <span class="date">${comment.datePosted }</span>
+                    </div>
+                    <div class="text">
+                        ${comment.content }
+                    </div>
+                </div>
+                </c:forEach>
             </div>
-
-        </div>
-
-<!--         <div class="ui comments"> -->
-<!--             <div class="comment"> -->
-<!--                 <div class="content"> -->
-<!--                     <a class="author">@sharkscion</a> -->
-<!--                     <div class="metadata"> -->
-<!--                         <span class="date">Today at 5:42PM</span> -->
-<!--                     </div> -->
-<!--                     <div class="text"> -->
-<!--                         How artistic! -->
-<!--                     </div> -->
-<!--                 </div> -->
-<!--             </div> -->
-<!--             <div class="comment"> -->
-<!--                 <div class="content"> -->
-<!--                     <a class="author">@UyDMN</a> -->
-<!--                     <div class="metadata"> -->
-<!--                         <span class="date">Yesterday at 12:30AM</span> -->
-<!--                     </div> -->
-<!--                     <div class="text"> -->
-<!--                         TROLOLOLOLOL :)) -->
-<!--                     </div> -->
-<!--                 </div> -->
-<!--             </div> -->
 
 <!--             <div class="comment hiddencomm"> -->
 <!--                 <div class="content"> -->
@@ -124,20 +115,9 @@
 <!--                 </div> -->
 <!--             </div> -->
 
-<!--             <div class="comment hiddencomm"> -->
-<!--                 <div class="content"> -->
-<!--                     <a class="author">@UyDMN</a> -->
-<!--                     <div class="metadata"> -->
-<!--                         <span class="date">Yesterday at 12:30AM</span> -->
-<!--                     </div> -->
-<!--                     <div class="text"> -->
-<!--                         TROLOLOLOLOL :)) -->
-<!--                     </div> -->
-<!--                 </div> -->
-<!--             </div> -->
 <!--             <br> -->
 <!--             <a class="blue" id="viewcomm" href="#">View more comments..</a> -->
-<!--         </div> -->
+        </div>
 </div>
     </div>
     </div>

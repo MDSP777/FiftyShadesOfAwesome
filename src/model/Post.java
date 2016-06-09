@@ -3,10 +3,13 @@ package model;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,8 +29,8 @@ public class Post {
 	private String content;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date datePosted;
-	@OneToMany(mappedBy="post", cascade=CascadeType.ALL)
-	Collection<Comment> commentsList;
+	@OneToMany(mappedBy="post", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	List<Comment> commentsList;
 	
 	protected Post(){}
 	
@@ -60,6 +63,7 @@ public class Post {
 		return formatter.format(datePosted);
 	}
 	public Collection<Comment> getCommentsList() {
+		Collections.sort(commentsList);
 		return commentsList;
 	}
 	public void addComment(Comment c){
