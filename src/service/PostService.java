@@ -22,7 +22,9 @@ public class PostService extends JpaService {
 	public Collection<Post> findAll(){
 		openTransaction();
 		try {
-			TypedQuery<Post> q = entityManager.createQuery("Select p from Post p order by p.datePosted desc", Post.class);
+			TypedQuery<Post> q = 
+					entityManager.createQuery
+					("Select p from Post p order by p.datePosted desc", Post.class);
 			return q.getResultList();
 		} finally {
 			closeTransaction();
@@ -33,6 +35,20 @@ public class PostService extends JpaService {
 		openTransaction();
 		try{
 			return entityManager.find(Post.class, id);
+		} finally {
+			closeTransaction();
+		}
+	}
+	
+	public Collection<Post> findPostsWithOffset(int offset, int limit){
+		openTransaction();
+		try{
+			TypedQuery<Post> q = 
+					entityManager.createQuery
+					("Select p from Post p order by p.datePosted desc", Post.class)
+					.setFirstResult(offset)
+					.setMaxResults(limit);
+			return q.getResultList();
 		} finally {
 			closeTransaction();
 		}

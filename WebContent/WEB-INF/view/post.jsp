@@ -43,7 +43,7 @@
             <a class="blue item" href="about.html">About Us</a>
         </div>
         <div class="item">
-            <img src="<c:url value="resources/logo.jpeg"/>">
+            <img src="<c:url value="resources/logo.png"/>">
         </div>
         <div class="right menu">
             <div class="item">

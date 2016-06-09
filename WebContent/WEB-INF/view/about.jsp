@@ -23,7 +23,7 @@
             <a class="active blue item" href="about.html">About Us</a>
         </div>
         <div class="item">
-            <img src="<c:url value="/resources/logo.jpeg" />">
+            <img src="<c:url value="/resources/logo.png" />">
         </div>
         <div class="right menu">
             <div class="item">
@@ -39,9 +39,10 @@
 <div class="ui container postcontent2">
     <div class="column">
         <div class="ui vertical segment">
-            <h1 class = "ui header blue">What is biting?</h1>
-            <p>The customer is almost always completely right!</p>
-            <p>We are a group of prosdev students making a blog site!</p>
+            <h1 class = "ui header blue">What is anonytwitter?</h1>
+            <p>Anonytwitter is anonymous tweeting!</p>
+            <p>Anonytwitter hopes to be a haven for society's outcasts.
+            Users can freely share their ideas and experiences anonymously. </p>
         </div>
 
         <!-- <div class="ui vertical segment">
@@ -78,21 +79,27 @@
                 </div>
                 <div class="row">
                     <div class = "column">
-                        <h3 class="ui center aligned icon header">Avril Fernandez</h3>
+                        <h3 class="ui center aligned icon header">Avril Fernandez
+                        <div class="sub header">Developer</div></h3>
                     </div>
                     <div class = "column">
-                        <h3 class="ui center aligned icon header">Rissa Quindoza</h3>
+                        <h3 class="ui center aligned icon header">Rissa Quindoza
+                        <div class="sub header">Developer</div></h3>
                     </div>
                     <div class = "column">
-                        <h3 class="ui center aligned icon header">Marc San Pedro</h3>
+                        <h3 class="ui center aligned icon header">Marc San Pedro
+                        <div class="sub header">Developer</div></h3>
                     </div>
                     <div class = "column">
-                        <h3 class="ui center aligned icon header">Shayane Tan</h3>
+                        <h3 class="ui center aligned icon header">Shayane Tan
+                        <div class="sub header">Designer</div></h3>
                     </div>
                     <div class = "column">
-                        <h3 class="ui center aligned icon header">Stanley Yu Galan</h3>
+                        <h3 class="ui center aligned icon header">Stanley Yu Galan
+                        <div class="sub header">Designer</div></h3>
                     </div>
                 </div>
+                
                 
             </div>
         </div>

@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COMET</title>
+    <title>Anonytwitter</title>
 
     <script src="<c:url value="/resources/jquery-1.11.3.min.js" />"></script>
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/Semantic-UI-master/dist/semantic.min.css" />">
@@ -37,7 +37,7 @@
             <a class="blue item" href="about.html">About Us</a>
         </div>
         <div class="item">
-            <img src="<c:url value="resources/logo.jpeg"/>">
+            <img src="<c:url value="resources/logo.png"/>">
         </div>
         <div class="right menu">
             <div class="item">
@@ -74,26 +74,26 @@
 
 <div class="ui bottom attached pagination stackable secondary menu">
 
-    <div class="ui container" id="pagination">
+<!--     <div class="ui container" id="pagination"> -->
 
-        <!--<div class="ui menu">-->
-            <a class="active item">
-                1
-            </a>
-            <div class="disabled item">
-                ...
-            </div>
-            <a class="item">
-                10
-            </a>
-            <a class="item">
-                11
-            </a>
-            <a class="item">
-                12
-            </a>
-        <!--</div>-->
-    </div>
+<!--         <div class="ui menu"> -->
+<!--             <a class="active item"> -->
+<!--                 1 -->
+<!--             </a> -->
+<!--             <div class="disabled item"> -->
+<!--                 ... -->
+<!--             </div> -->
+<!--             <a class="item"> -->
+<!--                 10 -->
+<!--             </a> -->
+<!--             <a class="item"> -->
+<!--                 11 -->
+<!--             </a> -->
+<!--             <a class="item"> -->
+<!--                 12 -->
+<!--             </a> -->
+<!--         </div> -->
+<!--     </div> -->
 </div>
 
 <div class="ui modal" id="mod">

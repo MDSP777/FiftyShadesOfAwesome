@@ -74,5 +74,14 @@ public class AddPostTest {
 				+ "four endings are possible based on the player's actions during the game.",
 				Calendar.getInstance().getTime());
 		postService.addPost(p);
+
+		postService.addPost(new Post("3", "3", "3", Calendar.getInstance().getTime()));
+		postService.addPost(new Post("4", "4", "4", Calendar.getInstance().getTime()));
+		postService.addPost(new Post("5", "5", "5", Calendar.getInstance().getTime()));
+		postService.addPost(new Post("6", "6", "6", Calendar.getInstance().getTime()));
+		postService.addPost(new Post("7", "7", "7", Calendar.getInstance().getTime()));
+		postService.addPost(new Post("8", "8", "8", Calendar.getInstance().getTime()));
+		postService.addPost(new Post("9", "9", "9", Calendar.getInstance().getTime()));
+		postService.addPost(new Post("10", "10", "10", Calendar.getInstance().getTime()));
 	}
 }
