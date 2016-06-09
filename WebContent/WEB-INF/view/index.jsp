@@ -29,9 +29,11 @@
 </head>
 <body>
 
-    <button class="ui red circular button" id="compose">
-    <img class="ui image" src="compose2.png">
-    </button>
+    <button>
+    <img class="ui tiny circular image" src="compose.png" id="compose">
+    <!--</img>-->
+</button>
+    
     <div class="ui inverted large top fixed menu">
 
     <div class="ui container">
