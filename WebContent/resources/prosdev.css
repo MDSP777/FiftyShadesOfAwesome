@@ -13,8 +13,20 @@ body {
 .seemore {
     font-style: italic;
     font-size: medium;
+    color: #00aced;
 }
 
+.seemore:hover {
+    font-style: italic;
+    font-size: medium;
+    color: #00aced;
+    border-bottom: thin solid #00aced ;
+}
+
+button {
+    border: none;
+    background: none;
+}
 #pagination {
     text-align: center !important;
     margin: 0 auto !important;
@@ -49,8 +61,8 @@ p {
     bottom: 10%;
     right: 8%;
     z-index: 100;
-    height: 80px;
-    width: 80px;
+    /*height: 90px;*/
+    /*width: 90px;*/
 }
 
 #logo {
@@ -59,4 +71,12 @@ p {
 
 .whitebg {
     background-color: white;
+}
+
+a, a:hover, a:active{
+    color: black;
+}
+
+a:hover{
+    border-bottom: solid thin black;
 }
