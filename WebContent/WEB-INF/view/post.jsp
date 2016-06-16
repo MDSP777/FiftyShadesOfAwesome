@@ -39,6 +39,13 @@
     <div class="ui container">
     <!--<div class="item">-->
     <a href="index.html"><img id="logo" src="<c:url value="/resources/anonytwitter2.png" />"></a>
+    <div class="ui left aligned category search item">
+            <div class="ui icon input">
+                <input class="prompt" type="text" placeholder="Search..">
+                <i class="search link icon"></i>
+            </div>
+            <div class="results"></div>
+        </div>
     <!--</div>-->
     <div class="right menu">
     <a class="item" href="index.html">Home</a>
@@ -52,7 +59,8 @@
     <div class="column">
     <div class="ui very padded segment">
         <div>
-    <div class="ui basic clearing segment">
+    <img class="ui smallcoverpic image" src="data:image/gif;base64,${post.fileData }">
+    <div class="ui basic clearing segment"  style="margin: 0">
             <h1 class="ui right floated header">
                 <div class="sub header">${post.datePosted }</div>
             </h1>
@@ -60,7 +68,9 @@
                 <div class="sub header">${post.author }</div>
             </h1>
     </div>
-    <div class="ui basic segment">
+
+
+    <div class="ui basic segment"  style="margin-top: 0">
             ${post.fullContent }
     </div>
         </div>
@@ -154,6 +164,7 @@
         <div class="field">
             <textarea style="font-size: medium" placeholder="Your text here.."></textarea>
         </div>
+        <button class="ui icon button"><i class="photo icon"></i></button>
         <button class="ui right floated blue labeled icon button" type="submit">Submit<i class="checkmark icon"></i>
         </button>
 
