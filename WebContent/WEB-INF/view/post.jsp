@@ -59,7 +59,7 @@
     <div class="column">
     <div class="ui very padded segment">
         <div>
-    <img class="ui smallcoverpic image" src="awesome.png">
+    <img class="ui smallcoverpic image" src="data:image/gif;base64,${post.fileData }">
     <div class="ui basic clearing segment"  style="margin: 0">
             <h1 class="ui right floated header">
                 <div class="sub header">${post.datePosted }</div>

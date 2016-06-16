@@ -87,3 +87,7 @@ a, a:hover, a:active{
 a:hover{
     border-bottom: solid thin black;
 }
+
+.highlight { 
+	background-color: orange 
+}

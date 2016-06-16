@@ -8,6 +8,7 @@
     <title>Anonytwitter</title>
 
     <script src="<c:url value="/resources/jquery-1.11.3.min.js" />"></script>
+    <script src="<c:url value="/resources/jquery.highlight.js" />"></script>
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/Semantic-UI-master/dist/semantic.min.css" />">
     <script src="<c:url value="/resources/Semantic-UI-master/dist/semantic.min.js" />"></script>
 
@@ -23,10 +24,8 @@
             $('.ui.sticky')
                     .sticky({
                         context: '.postcontent2'
-                    });
-            $('#fileBtn').click(function () {
-				$('#fileInput').trigger('click');
-			});
+                    })
+            ;
         });
         
         function submitSearch(){
@@ -65,47 +64,28 @@
 <div class="ui container postcontent2">
     <div class="column">
 	    <div class="ui very padded segment">
+			<h1>SEARCH RESULTS FOR '${query }'</h1>
 	    	<c:forEach var="post" items="${posts }">
 	            <div class="ui basic clearing segment">
 		            <h1 class="ui right floated header">
 		                <div class="sub header">${post.datePosted }</div>
 		            </h1>
-		            <h1 class="ui left floated  header"><a href="post.html?id=${post.id }">${post.title }</a>
+		            <h1 class="ui left floated  header">${post.title }
 		                <div class="sub header">${post.author }</div>
 		            </h1>
 	            </div>
-	            <div class="ui basic segment">
-	            	<c:if test="${post.fileData!=null }">
-		            	<img class="smallcoverpic ui medium rounded left floated image" src="data:image/gif;base64,${post.fileData }">
-		            </c:if>
-			            ${post.content }
+	            <div class="ui basic segment context">
+		            ${post.content }
 					<br/><br/>
+		            <a class="blue seemore" href="post.html?id=${post.id }">See more...</a>
 		        </div>
-
-		        <div class="ui right aligned basic segment" style="margin: 0; padding-top: 0;padding-right: 2em"><a class="seemore" href="post.html?id=${post.id }">See more...</a></div>
-
-               	<c:if test="${post.commentsList[0]!=null }">
-		        <div class="ui segment">
-                <div class="ui comments">
-                	<c:forEach begin="0" end="2" varStatus="i">
-	                    <div class="comment">
-	                        <div class="content">
-	                            <a class="author">${post.commentsList[i.index].author }</a>
-	                            <div class="metadata">
-	                                <span class="date">${post.commentsList[i.index].datePosted }</span>
-	                            </div>
-	                            <div class="text">
-	                                ${post.commentsList[i.index].content }
-	                            </div>
-	                        </div>
-	                    </div>
-                    </c:forEach>
-                    </div>
-            </div>
-            </c:if>
 	
 	            <div class="ui divider"></div>
 			</c:forEach>
+			<script>
+		            $(".context").unmark();
+		            $(".context").mark("world");
+			</script>
 		    <div class="ui bottom secondary menu">
 			    <div class="ui container" id="pagination">
 			    <c:choose>
@@ -113,7 +93,8 @@
 					    <i class=" disabled material-icons">chevron_left</i>
 			    	</c:when>
 			    	<c:otherwise>    		
-					    <a href="index.html?page=${pageNo-1 }"><i class="material-icons">chevron_left</i></a>
+					    <a href="search.html?query=${query }&page=${pageNo-1 }">
+					    <i class="material-icons">chevron_left</i></a>
 			    	</c:otherwise>
 			    </c:choose>
 			    <c:choose>
@@ -121,12 +102,12 @@
 						<c:forEach begin="1" end="${pageCount }" varStatus="loop" var="val">
 							<c:choose>
 								<c:when test="${pageNo==val }"> 
-									<a class="active item"  href="index.html?page=${val }">
+									<a class="active item"  href="search.html?query=${query }&page=${val }">
 								    	${val }
 								    </a>
 								</c:when>
 								<c:otherwise>
-									<a class="item"  href="index.html?page=${val }">
+									<a class="item"  href="search.html?query=${query }&page=${val }">
 								    	${val }
 								    </a>
 							    </c:otherwise>
@@ -140,12 +121,12 @@
 								<c:forEach begin="1" end="3" varStatus="loop" var="val">
 									<c:choose>
 										<c:when test="${pageNo==val }"> 
-											<a class="active item"  href="index.html?page=${val }">
+											<a class="active item"  href="search.html?query=${query }&page=${val }">
 										    	${val }
 										    </a>
 										</c:when>
 										<c:otherwise>
-											<a class="item"  href="index.html?page=${val }">
+											<a class="item"  href="search.html?query=${query }&page=${val }">
 										    	${val }
 										    </a>
 									    </c:otherwise>
@@ -154,29 +135,29 @@
 								<div class="disabled item">
 								    	...
 							    </div>
-							    <a class="item"  href="index.html?page=${pageCount }">
+							    <a class="item"  href="search.html?query=${query }&page=${pageCount }">
 							    	${pageCount }
 							    </a>
 							</c:when>
 							<c:when test="${pageNo>3 && pageNo<=pageCount-3 }">
-								<a class="item"  href="index.html?page=1">
+								<a class="item"  href="search.html?query=${query }&page=1">
 							    	1
 							    </a>
 								<div class="disabled item">
 								    	...
 							    </div>
-								<a class="active item"  href="index.html?page=${pageNo }">
+								<a class="active item"  href="search.html?query=${query }&page=${pageNo }">
 							    	${pageNo }
 							    </a>
 								<div class="disabled item">
 								    	...
 							    </div>
-							    <a class="item"  href="index.html?page=${pageCount }">
+							    <a class="item"  href="search.html?query=${query }&page=${pageCount }">
 							    	${pageCount }
 							    </a>
 							</c:when>
 							<c:otherwise>
-								<a class="item"  href="index.html?page=1">
+								<a class="item"  href="search.html?query=${query }&page=1">
 							    	1
 							    </a>
 								<div class="disabled item">
@@ -185,12 +166,12 @@
 							    <c:forEach begin="${pageCount-2 }" end="${pageCount }" varStatus="loop" var="val">
 									<c:choose>
 										<c:when test="${pageNo==val }"> 
-											<a class="active item"  href="index.html?page=${val }">
+											<a class="active item"  href="search.html?query=${query }&page=${val }">
 										    	${val }
 										    </a>
 										</c:when>
 										<c:otherwise>
-											<a class="item"  href="index.html?page=${val }">
+											<a class="item"  href="search.html?query=${query }&page=${val }">
 										    	${val }
 										    </a>
 									    </c:otherwise>
@@ -205,7 +186,7 @@
 					    <i class=" disabled material-icons">chevron_right</i>
 			    	</c:when>
 			    	<c:otherwise>    		
-					    <a href="index.html?page=${pageNo+1 }"><i class="material-icons">chevron_right</i></a>
+					    <a href="search.html?query=${query }&page=${pageNo+1 }"><i class="material-icons">chevron_right</i></a>
 			    	</c:otherwise>
 			    </c:choose>
 			    </div>
@@ -224,7 +205,7 @@
         Compose
     </div>
 	    <div class="ui form content">
-			<form action="submit_post" method="post" enctype="multipart/form-data">
+			<form action="submit_post" method="post">
 		        <div class="field">
 		            <input placeholder="@username" name="author" type="text">
 		        </div>
@@ -234,8 +215,6 @@
 		        <div class="field">
 		            <textarea style="font-size: medium" name="content" placeholder="Your text here.."></textarea>
 		        </div>
-		        <button id="fileBtn" class="ui icon button" type="button"><i class="photo icon"></i></button>
-		        <input type="file" id="fileInput" name="attachment" style="display:none" accept="image/*">
 		        <button class="ui right floated blue labeled icon button" type="submit">Submit<i class="checkmark icon"></i>
 		        </button>
 
@@ -243,6 +222,8 @@
 			</form>
 	    </div>
 </div>
-
+<script>
+	$(".context").highlight('${query }');
+</script>
 </body>
 </html>

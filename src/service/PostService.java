@@ -72,6 +72,34 @@ public class PostService extends JpaService {
 		} finally {
 			closeTransaction();
 		}
+	}
+
+	public Collection<Post> findPostsWithOffsetAndFilter(String query, int offset,
+			int limit) {
+		openTransaction();
+		try{
+			TypedQuery<Post> q = 
+					entityManager.createQuery
+					("Select p from Post p "
+							+ "where p.content like '%"+query+"%' "
+							+ "order by p.datePosted desc", Post.class)
+					.setFirstResult(offset)
+					.setMaxResults(limit);
+			return q.getResultList();
+		} finally {
+			closeTransaction();
+		}
+	}
+
+	public int getFilteredPostCount(String query) {
+		openTransaction();
+		try{
+			Query q = entityManager.createQuery("SELECT count(p) FROM Post p"
+					+ " where p.content like '%"+query+"%' ");
+			return Integer.parseInt(q.getSingleResult()+"");
+		} finally {
+			closeTransaction();
+		}
 	} 
 	
 }

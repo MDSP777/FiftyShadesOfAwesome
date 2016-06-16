@@ -1,6 +1,8 @@
 package model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -47,8 +49,9 @@ public class Comment implements Comparable<Comment>  {
 		return content;
 	}
 
-	public Date getDatePosted() {
-		return datePosted;
+	public String getDatePosted() {
+        SimpleDateFormat formatter = new SimpleDateFormat("EEEEE, MMMMM d, yyyy 'at' h:mma", new Locale("en", "US"));
+        return formatter.format(datePosted);
 	}
 
 	public Post getPost() {

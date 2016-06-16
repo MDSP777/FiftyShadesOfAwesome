@@ -1,11 +1,15 @@
 package model;
 
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -31,6 +35,7 @@ public class Post {
 	private Date datePosted;
 	@OneToMany(mappedBy="post", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	List<Comment> commentsList;
+	private Blob fileData;
 	
 	protected Post(){}
 	
@@ -59,7 +64,7 @@ public class Post {
 		return content.replaceAll("\n", "<br/>");
 	}
 	public String getDatePosted() {
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formatter = new SimpleDateFormat("MMMMM d, yyyy", new Locale("en", "US"));
 		return formatter.format(datePosted);
 	}
 	public Collection<Comment> getCommentsList() {
@@ -69,5 +74,12 @@ public class Post {
 	public void addComment(Comment c){
 		commentsList.add(c);
 		c.setPost(this);
+	}
+	public String getFileData() throws SQLException {
+		byte[] imgData = fileData.getBytes(1, (int)fileData.length());
+		return new String(Base64.getEncoder().encode(imgData));
+	}
+	public void setFileData(Blob fileData) {
+		this.fileData = fileData;
 	}
 }
