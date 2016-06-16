@@ -164,6 +164,7 @@
         <div class="field">
             <textarea style="font-size: medium" placeholder="Your text here.."></textarea>
         </div>
+        <button class="ui icon button"><i class="photo icon"></i></button>
         <button class="ui right floated blue labeled icon button" type="submit">Submit<i class="checkmark icon"></i>
         </button>
 
