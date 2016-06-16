@@ -10,6 +10,13 @@ body {
     background-color: white;
 }
 
+.smallcoverpic{
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 200px !important;
+    /*opacity: .5;*/
+}
+
 .seemore {
     font-style: italic;
     font-size: medium;
