@@ -38,7 +38,7 @@
 <body>
 
     <button>
-	    <img class="ui tiny circular image" src="<c:url value="/resources/compose.png" />"" id="compose">
+	    <img class="ui tiny circular image" src="<c:url value="/resources/compose.png" />" id="compose">
 	    <!--</img>-->
 	</button>
 
@@ -49,8 +49,8 @@
     <a href="index.html"><img id="logo" src="<c:url value="/resources/anonytwitter2.png" />"></a>
     <div class="ui left aligned category search item">
             <div class="ui icon input">
-                <input class="prompt" id="query" type="text" placeholder="Search..">
-                <i class="search link icon" onClick="submitSearch();"></i>
+	                <input class="prompt" id="query" type="text" placeholder="Search..">
+	                <i class="search link icon" onClick="submitSearch();"></i>
             </div>
             <div class="results"></div>
     </div>

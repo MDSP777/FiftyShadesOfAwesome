@@ -31,6 +31,11 @@
                 $("#viewcomm").css("display", "none");
             });
         });
+        
+        function submitSearch(){
+        	var query = $("#query").val();
+        	window.location = "http://localhost:8080/PROSDEV_1/search.html?query="+query;
+        }
     </script>
 </head>
 <body>
@@ -41,8 +46,8 @@
     <a href="index.html"><img id="logo" src="<c:url value="/resources/anonytwitter2.png" />"></a>
     <div class="ui left aligned category search item">
             <div class="ui icon input">
-                <input class="prompt" type="text" placeholder="Search..">
-                <i class="search link icon"></i>
+                <input class="prompt" id="query" type="text" placeholder="Search..">
+                <i class="search link icon" onClick="submitSearch();"></i>
             </div>
             <div class="results"></div>
         </div>
