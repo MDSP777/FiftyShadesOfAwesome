@@ -59,7 +59,8 @@
     <div class="column">
     <div class="ui very padded segment">
         <div>
-    <div class="ui basic clearing segment">
+    <img class="ui smallcoverpic image" src="awesome.png">
+    <div class="ui basic clearing segment"  style="margin: 0">
             <h1 class="ui right floated header">
                 <div class="sub header">${post.datePosted }</div>
             </h1>
@@ -67,7 +68,9 @@
                 <div class="sub header">${post.author }</div>
             </h1>
     </div>
-    <div class="ui basic segment">
+
+
+    <div class="ui basic segment"  style="margin-top: 0">
             ${post.fullContent }
     </div>
         </div>
