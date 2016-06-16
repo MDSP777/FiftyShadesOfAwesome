@@ -20,7 +20,13 @@
     <div class="ui container">
         
     	<a href="index.html"><img id="logo" src="<c:url value="/resources/anonytwitter2.png" />"></a>
-    
+    <div class="ui left aligned category search item">
+            <div class="ui icon input">
+                <input class="prompt" type="text" placeholder="Search..">
+                <i class="search link icon"></i>
+            </div>
+            <div class="results"></div>
+        </div>
     	<div class="right menu">
     		<a class="item" href="index.html">Home</a>
     		<a class="active item" href="about.html">About Us</a>

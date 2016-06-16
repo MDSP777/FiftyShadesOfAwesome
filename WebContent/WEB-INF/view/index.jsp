@@ -39,6 +39,14 @@
     <div class="ui container">
     <!--<div class="item">-->
     <a href="index.html"><img id="logo" src="<c:url value="/resources/anonytwitter2.png" />"></a>
+
+    <div class="ui left aligned category search item">
+            <div class="ui icon input">
+                <input class="prompt" type="text" placeholder="Search..">
+                <i class="search link icon"></i>
+            </div>
+            <div class="results"></div>
+        </div>
     <!--</div>-->
     <div class="right menu">
     <a class="active item" href="index.html">Home</a>
@@ -55,15 +63,43 @@
 		            <h1 class="ui right floated header">
 		                <div class="sub header">${post.datePosted }</div>
 		            </h1>
-		            <h1 class="ui left floated  header">${post.title }
+		            <h1 class="ui left floated  header"><a href="post.html?id=${post.id }">${post.title }</a>
 		                <div class="sub header">${post.author }</div>
 		            </h1>
 	            </div>
 	            <div class="ui basic segment">
 		            ${post.content }
 					<br/><br/>
-		            <a class="blue seemore" href="post.html?id=${post.id }">See more...</a>
 		        </div>
+
+		        <div class="ui right aligned basic segment" style="margin: 0; padding-top: 0;padding-right: 2em"><a class="seemore" href="post.html?id=${post.id }">See more...</a></div>
+
+		        <div class="ui segment">
+                <div class="ui comments">
+                    <div class="comment">
+                        <div class="content">
+                            <a class="author">@sharkscion</a>
+                            <div class="metadata">
+                                <span class="date">Today at 5:42PM</span>
+                            </div>
+                            <div class="text">
+                                How artistic!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="content">
+                            <a class="author">@UyDMN</a>
+                            <div class="metadata">
+                                <span class="date">Yesterday at 12:30AM</span>
+                            </div>
+                            <div class="text">
+                                TROLOLOLOLOL :))
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
 	
 	            <div class="ui divider"></div>
 			</c:forEach>
